@@ -1,7 +1,6 @@
 import React from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { MarqueeBanner } from './components/MarqueeBanner';
 import { About } from './components/About';
 import { Projects } from './components/Projects';
 import { Skills } from './components/Skills';
@@ -27,9 +26,6 @@ export default function App() {
       <main id="konten-utama" className="flex-1">
         {/* Section 1: Hero (Putih tulang) */}
         <Hero />
-
-        {/* Running Text Marquee Banner between Hero & Tentang */}
-        <MarqueeBanner />
 
         {/* Section 2: Tentang (Abu hangat) */}
         <About />

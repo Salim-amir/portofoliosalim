@@ -20,6 +20,7 @@ export interface Project {
   demoUrl: string | null;
   // TODO: Masukkan path gambar screenshot (misal: '/projects/skillconnect.png')
   screenshotUrl: string | null;
+  type?: 'web' | 'mobile';
 }
 
 export interface SkillCategory {
@@ -47,8 +48,7 @@ export const personalData = {
   github: 'https://github.com/Salim-amir',
   // TODO: Letakkan file CV di public/cv.pdf
   cvUrl: '/cv.pdf',
-  // TODO: Letakkan file foto di public/ dan isi path di sini (contoh: '/foto-salim.jpg')
-  photoUrl: '' as string | null,
+  photoUrl: '/salim-photo.png',
   profile:
     'Mahasiswa D4 Sistem Informasi Bisnis POLINEMA yang mengerjakan pengembangan web dan aplikasi. Stack utama saya Laravel, MySQL, React, dan Tailwind CSS. Proyek yang sudah saya kerjakan mencakup platform pencarian tim dan aplikasi marketplace sayuran.',
   infoStrip: {
@@ -81,6 +81,10 @@ export const skillsData: SkillCategory[] = [
     items: ['HTML', 'Tailwind CSS', 'React'],
   },
   {
+    category: 'Mobile',
+    items: ['Flutter', 'Firebase'],
+  },
+  {
     category: 'Tools',
     items: ['Git', 'GitHub'],
   },
@@ -95,11 +99,11 @@ export const projectsData: Project[] = [
       'Membantu pengguna menemukan anggota tim berdasarkan keterampilan. Proyek pengembangan platform kolaborasi tim terfokus.',
     stack: ['Laravel', 'MySQL', 'Frontend Sesuai Implementasi'],
     // TODO: Ganti dengan link repo spesifik (misal: 'https://github.com/Salim-amir/skillconnect')
-    githubRepo: null,
+    githubRepo: 'https://github.com/Salim-amir/skillconnect',
     // TODO: Masukkan URL demo langsung jika sudah tersedia
     demoUrl: null,
-    // TODO: Masukkan file screenshot (misal: '/projects/skillconnect.png')
-    screenshotUrl: null,
+    screenshotUrl: '/projects/skillconnect.png',
+    type: 'web',
   },
   {
     number: '02',
@@ -109,10 +113,11 @@ export const projectsData: Project[] = [
       'Proyek kelompok aplikasi mobile yang menghubungkan pembeli dengan pengepul sayuran secara langsung.',
     stack: ['Flutter', 'Firebase'],
     // TODO: Ganti dengan link repo spesifik (misal: 'https://github.com/Salim-amir/sayurku')
-    githubRepo: null,
+    githubRepo: 'https://github.com/Salim-amir/sayurku_kelompok6',
     // TODO: Masukkan URL demo langsung jika sudah tersedia
     demoUrl: null,
     // TODO: Masukkan file screenshot (misal: '/projects/sayurku.png')
-    screenshotUrl: null,
+    screenshotUrl: '/projects/sayurku.jpeg',
+    type: 'mobile',
   },
 ];

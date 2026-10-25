@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { skillsData } from '../data';
 import { SectionHeader } from './SectionHeader';
-import { Code2, Server, Wrench } from 'lucide-react';
+import { Code2, Server, Wrench, Smartphone } from 'lucide-react';
 
 export const Skills: React.FC = () => {
   const getCategoryIcon = (category: string) => {
@@ -11,6 +11,8 @@ export const Skills: React.FC = () => {
         return <Server className="w-4 h-4 text-[#E5482D]" aria-hidden="true" />;
       case 'Frontend':
         return <Code2 className="w-4 h-4 text-[#E5482D]" aria-hidden="true" />;
+      case 'Mobile':
+        return <Smartphone className="w-4 h-4 text-[#E5482D]" aria-hidden="true" />;
       case 'Tools':
         return <Wrench className="w-4 h-4 text-[#E5482D]" aria-hidden="true" />;
       default:
@@ -30,7 +32,7 @@ export const Skills: React.FC = () => {
         />
 
         {/* Grouped Clean Text Lists with Staggered Entrance and Hover Orange Underline */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {skillsData.map((group, groupIdx) => (
             <motion.div
               key={group.category}

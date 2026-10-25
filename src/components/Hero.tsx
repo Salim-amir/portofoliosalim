@@ -17,14 +17,18 @@ export const Hero: React.FC = () => {
                 className="absolute inset-0 bg-[#E0DBDB] border border-[#151515] translate-x-3 translate-y-3"
                 aria-hidden="true"
               />
-              <div className="relative aspect-[4/5] bg-[#E0DBDB] border border-[#151515] overflow-hidden flex flex-col items-center justify-center p-4">
+              <div className={`relative aspect-[4/5] bg-gradient-to-b from-[#EAE6DF] to-[#D8D2C9] border border-[#151515] overflow-hidden flex flex-col ${
+                personalData.photoUrl ? 'justify-end items-center' : 'items-center justify-center p-4'
+              }`}>
                 {personalData.photoUrl ? (
-                  <img
-                    src={personalData.photoUrl}
-                    alt={personalData.name}
-                    className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
-                  />
+                  <div className="w-full h-full relative flex items-end justify-center">
+                    <img
+                      src={personalData.photoUrl}
+                      alt={personalData.name}
+                      className="w-full h-full object-cover object-top"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
                 ) : (
                   <div className="flex flex-col items-center justify-center text-center p-4">
                     <User className="w-12 h-12 text-[#151515] mb-2" aria-hidden="true" />
@@ -33,7 +37,7 @@ export const Hero: React.FC = () => {
                     </span>
                   </div>
                 )}
-                <div className="absolute bottom-2 right-2 bg-[#151515] text-[#F6F3EE] text-[9px] font-mono uppercase tracking-widest px-2 py-0.5">
+                <div className="absolute bottom-2 right-2 bg-[#151515] text-[#F6F3EE] text-[9px] font-mono uppercase tracking-widest px-2 py-0.5 z-10">
                   MALANG — 2026
                 </div>
               </div>
@@ -163,15 +167,19 @@ export const Hero: React.FC = () => {
                 initial={{ clipPath: 'inset(100% 0% 0% 0%)' }}
                 animate={{ clipPath: 'inset(0% 0% 0% 0%)' }}
                 transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-                className="relative aspect-[3/4] bg-[#E0DBDB] border border-[#151515] overflow-hidden flex flex-col items-center justify-center p-6 text-center"
+                className={`relative aspect-[3/4] bg-gradient-to-b from-[#EAE6DF] to-[#D8D2C9] border border-[#151515] overflow-hidden flex flex-col ${
+                  personalData.photoUrl ? 'justify-end items-center' : 'items-center justify-center p-6 text-center'
+                }`}
               >
                 {personalData.photoUrl ? (
-                  <img
-                    src={personalData.photoUrl}
-                    alt={personalData.name}
-                    className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
-                  />
+                  <div className="w-full h-full relative flex items-end justify-center overflow-hidden group">
+                    <img
+                      src={personalData.photoUrl}
+                      alt={personalData.name}
+                      className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
                 ) : (
                   <div className="flex flex-col items-center justify-center p-6 text-center">
                     <div className="w-20 h-20 border border-[#151515] bg-[#F6F3EE] flex items-center justify-center mb-4">
@@ -190,7 +198,7 @@ export const Hero: React.FC = () => {
                 )}
 
                 {/* Stamp label on photo corner */}
-                <div className="absolute bottom-3 right-3 bg-[#151515] text-[#F6F3EE] text-[10px] font-mono uppercase tracking-widest px-2.5 py-1">
+                <div className="absolute bottom-3 right-3 bg-[#151515] text-[#F6F3EE] text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 z-10 shadow-xs">
                   MALANG — 2026
                 </div>
               </motion.div>
